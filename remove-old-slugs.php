@@ -3,7 +3,7 @@
 Plugin Name: WordPress Remove Old Slugs
 Plugin URI: http://www.algoritmika.com/shop/wordpress-remove-old-slugs-plugin/
 Description: Plugin removes old slugs/permalinks from database.
-Version: 1.0.0
+Version: 1.0.1
 Author: Algoritmika Ltd.
 Author URI: http://www.algoritmika.com
 License: GPLv2 or later
@@ -11,11 +11,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 ?>
 <?php
-
 if ( ! class_exists( 'WROS_plugin' ) ) {
-	class WROS_plugin{
-		public function __construct(){
+	class WROS_plugin{	
 	
+		public function __construct(){
 			if(is_admin()){
 				add_action('admin_menu', array($this, 'add_plugin_options_page'));
 			}
@@ -57,9 +56,23 @@ if ( ! class_exists( 'WROS_plugin' ) ) {
 			}
 			else
 			{
-				?>No old slugs found found in database.<?php
+				?>No old slugs found in database.<?php
 			}
 			?></p>
+			<?php
+				$protocol = strpos(strtolower($_SERVER['SERVER_PROTOCOL']),'https') 
+						=== FALSE ? 'http' : 'https';
+				$host     = $_SERVER['HTTP_HOST'];
+				$script   = $_SERVER['SCRIPT_NAME'];
+				$params   = $_SERVER['QUERY_STRING'];
+				 
+				$currentUrl = $protocol . '://' . $host . $script . '?' . $params;	
+				
+				echo '<p><a href="'.$currentUrl.'">Refresh list</a></p>';
+			?>
+			<div id='setting-error-settings_updated' class='updated settings-error'>
+			<p>If You like my plugin and find it useful - please buy me a coffee :) <a href="http://www.algoritmika.com/donate/">Donate</a>.</p>
+			</div>
 		</div>
 		<?php
 		}

@@ -4,7 +4,7 @@ Donate link: http://algoritmika.com/donate/
 Tags: remove old slug,remove old slugs,remove old permalink,remove old permalinks,delete old slug,delete old slugs,delete old permalink,delete old permalinks,purge old slug,purge old slugs,purge old permalink,purge old permalinks
 Requires at least: 3.5.1
 Tested up to: 3.5.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,10 @@ At this time - no. Only all old slugs can be deleted.
 1. Tools -> Remove Old Slugs screenshot.
 
 == Changelog ==
+
+= 1.0.1 =
+* Refresh link added
+* Minor bug fixed
 
 = 1.0.0 =
 * Initial Release
